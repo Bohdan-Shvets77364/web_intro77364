@@ -1,0 +1,137 @@
+/* Базові налаштування */
+body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+    color: #334155;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* Контейнери (Header, Main, Footer) */
+header, section, footer {
+    max-width: 800px;
+    margin: 0 auto 25px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Ефект при наведенні на секції */
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15);
+}
+
+/* Заголовки */
+h1 {
+    color: #0369a1;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: -1px;
+}
+
+h2 {
+    color: #0ea5e9;
+    font-size: 1.6em;
+    border-bottom: 2px solid #e0f2fe;
+    padding-bottom: 8px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+h2::before {
+    content: "•";
+    color: #0ea5e9;
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+/* Фотографія */
+img {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #bae6fd;
+    transition: transform 0.5s ease;
+}
+
+img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Списки та елементи */
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+/* Картки досвіду (article) */
+article {
+    background-color: #f8fafc;
+    border-left: 4px solid #38bdf8;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 0 12px 12px 0;
+    transition: background 0.3s ease;
+}
+
+article:hover {
+    background-color: #f0f9ff;
+}
+
+article h3 {
+    margin: 0 0 5px 0;
+    color: #0c4a6e;
+}
+
+/* Посилання */
+a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0369a1;
+    text-decoration: underline;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    background: transparent;
+    box-shadow: none;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Анімація появи */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптація для телефонів */
+@media (max-width: 600px) {
+    body { padding: 20px 10px; }
+    h1 { font-size: 1.8em; }
+}
