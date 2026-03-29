@@ -1,137 +1,67 @@
-/* Базові налаштування */
+/* Зміна крою письма (font-family) */
 body {
-    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
-    color: #334155;
+    background-color: #f4fdf4; /* Дуже світлий зелений фон */
+    color: #2d3436;
     margin: 0;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
-/* Контейнери (Header, Main, Footer) */
 header, section, footer {
-    max-width: 800px;
-    margin: 0 auto 25px auto;
+    max-width: 750px;
+    margin: 0 auto 20px auto;
     background: #ffffff;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 0.8s ease-out;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Ефект при наведенні на секції */
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15);
-}
-
-/* Заголовки */
+/* Колір провідний - ЗЕЛЕНИЙ (#2e8b57) */
 h1 {
-    color: #0369a1;
+    color: #2e8b57; 
     text-align: center;
-    margin: 0;
-    font-size: 2.5em;
-    letter-spacing: -1px;
+    text-transform: uppercase;
 }
 
 h2 {
-    color: #0ea5e9;
-    font-size: 1.6em;
-    border-bottom: 2px solid #e0f2fe;
-    padding-bottom: 8px;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
+    color: #2e8b57;
+    border-bottom: 2px solid #2e8b57;
+    padding-bottom: 5px;
 }
 
-h2::before {
-    content: "•";
-    color: #0ea5e9;
-    margin-right: 10px;
-    font-size: 1.5em;
-}
-
-/* Фотографія */
 img {
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 15px;
     width: 140px;
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #bae6fd;
-    transition: transform 0.5s ease;
+    border: 3px solid #2e8b57;
 }
 
-img:hover {
-    transform: rotate(5deg) scale(1.1);
-}
-
-/* Списки та елементи */
-ul, ol {
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 12px;
-}
-
-/* Картки досвіду (article) */
-article {
-    background-color: #f8fafc;
-    border-left: 4px solid #38bdf8;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    border-radius: 0 12px 12px 0;
-    transition: background 0.3s ease;
-}
-
-article:hover {
-    background-color: #f0f9ff;
-}
-
-article h3 {
-    margin: 0 0 5px 0;
-    color: #0c4a6e;
-}
-
-/* Посилання */
 a {
-    color: #0284c7;
+    color: #1b5e20;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: bold;
 }
 
 a:hover {
-    color: #0369a1;
     text-decoration: underline;
 }
 
-/* Футер */
+article {
+    border-left: 4px solid #81c784;
+    padding-left: 15px;
+    background: #f1f8e9;
+    padding: 10px 15px;
+    border-radius: 0 8px 8px 0;
+}
+
 footer {
     text-align: center;
-    background: transparent;
-    box-shadow: none;
-    color: #64748b;
-    border-top: 1px solid #e2e8f0;
-}
-
-/* Анімація появи */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Адаптація для телефонів */
-@media (max-width: 600px) {
-    body { padding: 20px 10px; }
-    h1 { font-size: 1.8em; }
+    font-size: 0.85em;
+    color: #666;
+    border: none;
+    background: none;
 }
