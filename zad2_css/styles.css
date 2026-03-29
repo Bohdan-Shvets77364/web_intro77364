@@ -1,8 +1,8 @@
-/* Зміна крою письма (font-family) */
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4fdf4; /* Дуже світлий зелений фон */
+    background-color: #f4fdf4; 
     color: #2d3436;
     margin: 0;
     padding: 20px;
@@ -17,7 +17,7 @@ header, section, footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Колір провідний - ЗЕЛЕНИЙ (#2e8b57) */
+
 h1 {
     color: #2e8b57; 
     text-align: center;
