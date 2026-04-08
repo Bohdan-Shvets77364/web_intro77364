@@ -1,38 +1,47 @@
 body {
     font-family: 'Georgia', serif;
-    background-color: #fff5f5;
-    color: #444;
+    background-color: #ef9a9a;
+    color: #b71c1c;
     padding: 30px;
+    line-height: 1.5;
 }
 
 header, section {
     max-width: 800px;
     margin: 0 auto 20px;
-    background: white;
+    background: #ffffff;
     padding: 20px;
-    border: 2px solid #b22222; /* Червона рамка */
-    border-radius: 0px; /* Гострі кути */
+    border: 3px solid #b71c1c;
+    border-radius: 0px;
 }
 
-h1, h2 {
-    color: #b22222; /* FireBrick Red */
+h1, h2 { 
+    color: #b71c1c; 
     text-transform: uppercase;
 }
 
 img {
     width: 140px;
-    border: 5px double #b22222;
+    height: 140px;
+    object-fit: cover;
+    border: 5px solid #b71c1c;
     display: block;
     margin: 0 auto 15px;
 }
 
-a {
-    color: #d32f2f;
-    font-weight: bold;
+a { 
+    color: #d32f2f; 
+    font-weight: bold; 
+    text-decoration: underline;
 }
 
-article {
-    background: #ffebee;
-    padding: 15px;
-    margin-top: 10px;
+article { 
+    background: #ffebee; 
+    padding: 15px; 
+    border: 1px dashed #b71c1c;
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
 }
