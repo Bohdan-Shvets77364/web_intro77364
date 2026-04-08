@@ -1,0 +1,40 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #f0fdf4;
+    color: #2d3436;
+    padding: 30px;
+}
+
+header, section {
+    max-width: 800px;
+    margin: 0 auto 25px;
+    background: white;
+    padding: 30px;
+    border-radius: 30px; /* Дуже круглі кути */
+    box-shadow: 0 5px 15px rgba(46, 139, 87, 0.1); /* Зелена тінь */
+}
+
+h1, h2 {
+    color: #2e8b57; /* SeaGreen */
+    letter-spacing: 1px;
+}
+
+img {
+    width: 150px;
+    border-radius: 50%; /* Кругле фото */
+    border: 4px dashed #2e8b57;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+a {
+    color: #1b5e20;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+
+article {
+    border-left: 10px solid #a5d6a7;
+    padding-left: 20px;
+    margin-top: 20px;
+}
