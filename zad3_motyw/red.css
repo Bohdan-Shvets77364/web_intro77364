@@ -1,0 +1,38 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fff5f5;
+    color: #444;
+    padding: 30px;
+}
+
+header, section {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    background: white;
+    padding: 20px;
+    border: 2px solid #b22222; /* Червона рамка */
+    border-radius: 0px; /* Гострі кути */
+}
+
+h1, h2 {
+    color: #b22222; /* FireBrick Red */
+    text-transform: uppercase;
+}
+
+img {
+    width: 140px;
+    border: 5px double #b22222;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+a {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+article {
+    background: #ffebee;
+    padding: 15px;
+    margin-top: 10px;
+}
