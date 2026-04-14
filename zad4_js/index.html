@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Bohdan Shvets - Zadanie 4 JS</title>
+    <link id="theme-style" rel="stylesheet" href="red.css">
+</head>
+<body>
+
+    <header>
+        <img src="myphoto.jpg" alt="Zdjęcie profilowe: Bohdan Shvets">
+        <h1>Bohdan Shvets</h1>
+        <div style="text-align: center; margin: 20px;">
+            <button onclick="toggleTheme()" style="padding: 10px 20px; cursor: pointer; font-weight: bold;">Zmień Motyw</button>
+            <button onclick="toggleSection()" style="padding: 10px 20px; cursor: pointer; font-weight: bold;">Ukryj/Pokaż Umiejętności</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>E-mail: <a href="mailto:bshvets1@stu.vistula.edu.pl">bshvets1@stu.vistula.edu.pl</a></p>
+            <p>Telefon: <a href="tel:+48576661689">+48 576 661 689</a></p>
+            <p>GitHub: <a href="https://github.com/Bohdan-Shvets77364" target="_blank">github.com/Bohdan-Shvets77364</a></p>
+        </section>
+
+        <section id="o-mnie">
+            <h2>O mnie</h2>
+            <p>Jestem studentem Informatyki. Ta strona reaguje на кнопки завдяки JavaScript!</p>
+        </section>
+
+        <section id="umiejetnosci">
+            <h2>Umiejętności</h2>
+            <ul>
+                <li>Podstawy JavaScript</li>
+                <li>HTML5 i CSS3</li>
+                <li>Git / GitHub</li>
+            </ul>
+        </section>
+
+        <section id="doswiadczenie">
+            <h2>Doświadczenie</h2>
+            <article>
+                <h3>Projekty akademickie</h3>
+                <p>Vistula University | 2025</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bohdan Shvets. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
