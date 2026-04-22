@@ -2,48 +2,61 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Bohdan Shvets - Zadanie 5 Formularz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <h1>Kontakt</h1>
+        <img src="myphoto.jpg" alt="Zdjęcie profilowe: Bohdan Shvets" class="profile-img">
+        <h1>Bohdan Shvets</h1>
     </header>
 
     <main>
-        <section class="form-container">
-            <h2>Napisz do mnie</h2>
+        <section id="o-mnie">
+            <h2>O mnie</h2>
+            <p>Jestem studentem Informatyki. Poniżej znajduje się formularz kontaktowy z walidacją JavaScript.</p>
+        </section>
+
+        <section id="kontakt-form">
+            <h2>Kontakt - Napisz do mnie</h2>
             <form id="contactForm" novalidate>
                 <div class="form-group">
                     <label for="firstName">Imię:</label>
-                    <input type="text" id="firstName" name="firstName">
+                    <input type="text" id="firstName" name="firstName" placeholder="Wpisz imię...">
                     <span class="error-msg" id="firstNameError"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="lastName">Nazwisko:</label>
-                    <input type="text" id="lastName" name="lastName">
+                    <input type="text" id="lastName" name="lastName" placeholder="Wpisz nazwisko...">
                     <span class="error-msg" id="lastNameError"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" placeholder="email@przyklad.pl">
                     <span class="error-msg" id="emailError"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Wiadomość:</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
+                    <textarea id="message" name="message" rows="4" placeholder="Twoja wiadomość..."></textarea>
                     <span class="error-msg" id="messageError"></span>
                 </div>
 
-                <button type="submit">Wyślij wiadomość</button>
-                <p id="successMsg" style="color: green; display: none; margin-top: 10px;">Formularz został poprawnie walidowany!</p>
+                <button type="submit" id="submitBtn">Wyślij wiadomość</button>
+                <p id="successMsg" style="color: #27ae60; display: none; font-weight: bold; margin-top: 15px; text-align: center;">
+                    ✅ Formularz został poprawnie walidowany i wysłany!
+                </p>
             </form>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Bohdan Shvets. Wszystkie prawa zastrzeżone.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
