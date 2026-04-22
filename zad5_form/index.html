@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Bohdan Shvets - Zadanie 5 Formularz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Kontakt</h1>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Napisz do mnie</h2>
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="firstName">Imię:</label>
+                    <input type="text" id="firstName" name="firstName">
+                    <span class="error-msg" id="firstNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Nazwisko:</label>
+                    <input type="text" id="lastName" name="lastName">
+                    <span class="error-msg" id="lastNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Wiadomość:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    <span class="error-msg" id="messageError"></span>
+                </div>
+
+                <button type="submit">Wyślij wiadomość</button>
+                <p id="successMsg" style="color: green; display: none; margin-top: 10px;">Formularz został poprawnie walidowany!</p>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
