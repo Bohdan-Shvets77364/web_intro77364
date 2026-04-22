@@ -1,13 +1,12 @@
 document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Зупиняємо відправку
+    event.preventDefault(); 
 
-    // Очищуємо попередні помилки
     document.querySelectorAll('.error-msg').forEach(el => el.textContent = '');
     document.getElementById('successMsg').style.display = 'none';
 
     let isValid = true;
 
-    // 1. Валідація Імені (не порожнє і без цифр)
+    
     const firstName = document.getElementById('firstName').value;
     if (firstName.trim() === '') {
         document.getElementById('firstNameError').textContent = 'Imię jest wymagane.';
@@ -17,7 +16,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         isValid = false;
     }
 
-    // 2. Валідація Прізвища (не порожнє і без цифр)
+   
     const lastName = document.getElementById('lastName').value;
     if (lastName.trim() === '') {
         document.getElementById('lastNameError').textContent = 'Nazwisko jest wymagane.';
@@ -27,7 +26,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         isValid = false;
     }
 
-    // 3. Валідація E-mail (формат адреси)
+  
     const email = document.getElementById('email').value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -35,16 +34,16 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         isValid = false;
     }
 
-    // 4. Валідація Повідомлення
+   
     const message = document.getElementById('message').value;
     if (message.trim().length < 5) {
         document.getElementById('messageError').textContent = 'Wiadomość musi mieć co najmniej 5 znaków.';
         isValid = false;
     }
 
-    // Якщо все добре
+ 
     if (isValid) {
         document.getElementById('successMsg').style.display = 'block';
-        // Тут можна було б відправляти дані на сервер, але за завданням backend не потрібен
+        
     }
 });
