@@ -1,27 +1,27 @@
 
 fetch('data.json')
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
-        const skillsList = document.getElementById('lista-umiejetnosci');
-        data.umiejetnosci.forEach(skill => {
+        const sList = document.getElementById('lista-umiejetnosci');
+        data.umiejetnosci.forEach(s => {
             let li = document.createElement('li');
-            li.textContent = skill;
-            skillsList.appendChild(li);
+            li.textContent = s;
+            sList.appendChild(li);
         });
-
-        const projectsList = document.getElementById('lista-projektow');
-        data.projekty.forEach(project => {
+        const pList = document.getElementById('lista-projektow');
+        data.projekty.forEach(p => {
             let li = document.createElement('li');
-            li.textContent = project;
-            projectsList.appendChild(li);
+            li.textContent = p;
+            pList.appendChild(li);
         });
     })
-    .catch(error => console.error('Błąd ładowania JSON:', error));
+    .catch(err => console.error("Błąd fetch:", err));
 
 
 function toggleTheme() {
-    let theme = document.getElementById('theme-style');
-    theme.getAttribute('href') === 'red.css' ? theme.setAttribute('href', 'green.css') : theme.setAttribute('href', 'red.css');
+    let t = document.getElementById('theme-style');
+    let current = t.getAttribute('href');
+    t.setAttribute('href', current === 'red.css' ? 'green.css' : 'red.css');
 }
 
 
@@ -33,9 +33,29 @@ function toggleSection() {
 
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    let name = document.getElementById('firstName').value;
-    let isValid = name.trim() !== "" && !/\d/.test(name);
-    
-    document.getElementById('firstNameError').textContent = isValid ? "" : "Błędne imię!";
-    if(isValid) document.getElementById('successMsg').style.display = 'block';
+    document.querySelectorAll('.error-msg').forEach(el => el.textContent = '');
+    document.getElementById('successMsg').style.display = 'none';
+
+    let isValid = true;
+    const fName = document.getElementById('firstName').value.trim();
+    const lName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (fName === '' || /\d/.test(fName)) {
+        document.getElementById('firstNameError').textContent = 'Wpisz poprawne imię (bez cyfr).';
+        isValid = false;
+    }
+    if (lName === '' || /\d/.test(lName)) {
+        document.getElementById('lastNameError').textContent = 'Wpisz poprawne nazwisko (bez cyfr).';
+        isValid = false;
+    }
+    if (!email.includes('@') || email.length < 5) {
+        document.getElementById('emailError').textContent = 'Wpisz poprawny adres e-mail.';
+        isValid = false;
+    }
+
+    if (isValid) {
+        document.getElementById('successMsg').style.display = 'block';
+        this.reset();
+    }
 });
