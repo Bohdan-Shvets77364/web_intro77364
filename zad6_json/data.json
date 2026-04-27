@@ -1,0 +1,13 @@
+{
+  "umiejetnosci": [
+    "Podstawy JavaScript",
+    "HTML5 i CSS3",
+    "Logika Backendowa (C#)",
+    "Obsługa JSON i Fetch API"
+  ],
+  "projekty": [
+    "Kalkulator C# - aplikacja konsolowa",
+    "Portfolio HTML - statyczna strona CV",
+    "Dynamiczny Formularz - walidacja JS"
+  ]
+}
