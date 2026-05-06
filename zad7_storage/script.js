@@ -2,59 +2,45 @@
 fetch('data.json')
     .then(res => res.json())
     .then(data => {
-        const sList = document.getElementById('lista-umiejetnosci');
-        data.umiejetnosci.forEach(s => {
-            let li = document.createElement('li');
-            li.textContent = s;
-            sList.appendChild(li);
-        });
-        const pList = document.getElementById('lista-projektow');
-        data.projekty.forEach(p => {
-            let li = document.createElement('li');
-            li.textContent = p;
-            pList.appendChild(li);
-        });
+        const container = document.getElementById('dynamic-content');
+        let html = "<h3>Umiejętności:</h3><ul>";
+        data.umiejetnosci.forEach(s => html += `<li>${s}</li>`);
+        html += "</ul><h3>Projekty:</h3><ol>";
+        data.projekty.forEach(p => html += `<li>${p}</li>`);
+        html += "</ol>";
+        container.innerHTML = html;
     });
 
 
 const noteInput = document.getElementById('noteInput');
 const notesList = document.getElementById('notesList');
 
-
 document.addEventListener('DOMContentLoaded', displayNotes);
 
 function addNote() {
-    const noteText = noteInput.value.trim();
-    if (noteText === '') return;
-
-    let notes = localStorage.getItem('myNotes') ? JSON.parse(localStorage.getItem('myNotes')) : [];
-    notes.push(noteText);
+    const text = noteInput.value.trim();
+    if (!text) return;
+    let notes = JSON.parse(localStorage.getItem('myNotes') || '[]');
+    notes.push(text);
     localStorage.setItem('myNotes', JSON.stringify(notes));
-    
     noteInput.value = '';
     displayNotes();
 }
 
 function displayNotes() {
     notesList.innerHTML = '';
-    let notes = localStorage.getItem('myNotes') ? JSON.parse(localStorage.getItem('myNotes')) : [];
-    
-    notes.forEach((note, index) => {
-        let li = document.createElement('li');
-        li.style.display = 'flex';
-        li.style.justifyContent = 'space-between';
-        li.style.marginBottom = '10px';
-        li.innerHTML = `
-            <span>${note}</span>
-            <button onclick="deleteNote(${index})" style="background: #e74c3c; color: white; border: none; padding: 2px 10px; cursor: pointer; border-radius: 5px;">Usuń</button>
-        `;
+    let notes = JSON.parse(localStorage.getItem('myNotes') || '[]');
+    notes.forEach((n, i) => {
+        const li = document.createElement('li');
+        li.style = "background: #f9f9f9; padding: 10px; margin-bottom: 5px; border-left: 4px solid #333; display: flex; justify-content: space-between;";
+        li.innerHTML = `<span>${n}</span> <button onclick="deleteNote(${i})" style="color:red; border:none; background:none; cursor:pointer;">[Usuń]</button>`;
         notesList.appendChild(li);
     });
 }
 
-function deleteNote(index) {
+function deleteNote(i) {
     let notes = JSON.parse(localStorage.getItem('myNotes'));
-    notes.splice(index, 1);
+    notes.splice(i, 1);
     localStorage.setItem('myNotes', JSON.stringify(notes));
     displayNotes();
 }
@@ -66,12 +52,18 @@ function toggleTheme() {
 }
 
 function toggleSection() {
-    let s = document.getElementById('umiejetnosci-container');
+    let s = document.getElementById('json-data-container');
     s.style.display = (s.style.display === 'none') ? 'block' : 'none';
 }
 
+
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-   
-    document.getElementById('successMsg').style.display = 'block';
+    const name = document.getElementById('fullName').value;
+    const comment = document.getElementById('comment').value;
+    
+    if(name.length > 2 && comment.length > 5) {
+        document.getElementById('successMsg').style.display = 'block';
+        this.reset();
+    }
 });
