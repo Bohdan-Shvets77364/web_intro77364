@@ -1,0 +1,15 @@
+{
+  "umiejetnosci": [
+    "Zaawansowana obsługa LocalStorage i SessionStorage",
+    "Integracja danych zewnętrznych przez Fetch API (JSON)",
+    "Programowanie asynchroniczne w JavaScript",
+    "Tworzenie responsywnych układів (Flexbox/Grid)",
+    "Zaawansowana walidacja formularzy (RegEx)",
+    "Zarządzanie motywami CSS (Dynamic Theming)"
+  ],
+  "projekty": [
+    "System zarządzania notatkami w przeglądarce",
+    "Interaktywne CV z dynamicznym ładowaniem treści",
+    "Formularz kontaktowy z obsługą błędów w czasie rzeczywistym"
+  ]
+}
