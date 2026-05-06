@@ -21,11 +21,10 @@
         <section id="kontakt-info">
             <h2>Kontakt</h2>
             <p><strong>Telegram:</strong> <a href="https://t.me/BohdanShvetss" target="_blank">@BohdanShvetss</a></p>
-            <p><strong>E-mail:</strong> <a href="mailto:bshvets1@stu.vistula.edu.pl">bshvets1@stu.vistula.edu.pl</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/Bohdan-Shvets77364" target="_blank">github.com/Bohdan-Shvets77364</a></p>
+            <p><strong>E-mail:</strong> <a href="mailto:bshvets1@stu.vistula.edu.pl">bshvets1@stu.vistula.edu.pl</a></p>
         </section>
 
-        
         <section id="umiejetnosci-container">
             <h2>Umiejętności </h2>
             <ul id="lista-umiejetnosci"></ul>
@@ -33,7 +32,6 @@
             <ol id="lista-projektow"></ol>
         </section>
 
-        
         <section id="storage-sekcja">
             <h2>Moje Notatki </h2>
             <div class="form-group" style="display: flex; gap: 10px;">
@@ -43,27 +41,33 @@
             <ul id="notesList" style="margin-top: 15px; list-style: none; padding: 0;"></ul>
         </section>
 
-        
         <section id="kontakt-form">
             <h2>Napisz do mnie</h2>
             <form id="contactForm" novalidate>
                 <div class="form-group">
-                    <label>Imię i Nazwisko:</label>
-                    <input type="text" id="fullName" placeholder="Wpisz imię...">
-                    <span class="error-msg" id="nameError"></span>
+                    <label>Imię:</label>
+                    <input type="text" id="firstName" placeholder="np. Bohdan">
+                    <span class="error-msg" id="firstNameError" style="color: red; font-size: 12px;"></span>
+                </div>
+                <div class="form-group">
+                    <label>Nazwisko:</label>
+                    <input type="text" id="lastName" placeholder="np. Shvets">
+                    <span class="error-msg" id="lastNameError" style="color: red; font-size: 12px;"></span>
                 </div>
                 <div class="form-group">
                     <label>E-mail:</label>
                     <input type="email" id="email" placeholder="example@mail.com">
-                    <span class="error-msg" id="emailError"></span>
+                    <span class="error-msg" id="emailError" style="color: red; font-size: 12px;"></span>
                 </div>
                 <div class="form-group">
-                    <label>Wiadomość / Komentarz:</label>
-                    <textarea id="comment" rows="4" placeholder="Napisz komentarz до мене..."></textarea>
-                    <span class="error-msg" id="commentError"></span>
+                    <label>Komentarz (min. 5 znaków):</label>
+                    <textarea id="comment" rows="4" placeholder="Twoja wiadomość..."></textarea>
+                    <span class="error-msg" id="commentError" style="color: red; font-size: 12px;"></span>
                 </div>
                 <button type="submit" class="submit-btn">Wyślij wiadomość</button>
-                <p id="successMsg" class="success-text">✅ Wiadomość została wysłana!</p>
+                <p id="successMsg" class="success-text" style="display:none; color: green; font-weight: bold; text-align: center; margin-top: 10px;">
+                    ✅ Wiadomość została wysłana!
+                </p>
             </form>
         </section>
     </main>
