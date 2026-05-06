@@ -2,14 +2,20 @@
 fetch('data.json')
     .then(res => res.json())
     .then(data => {
-        const container = document.getElementById('dynamic-content');
-        let html = "<h3>Umiejętności:</h3><ul>";
-        data.umiejetnosci.forEach(s => html += `<li>${s}</li>`);
-        html += "</ul><h3>Projekty:</h3><ol>";
-        data.projekty.forEach(p => html += `<li>${p}</li>`);
-        html += "</ol>";
-        container.innerHTML = html;
-    });
+        const sList = document.getElementById('lista-umiejetnosci');
+        data.umiejetnosci.forEach(s => {
+            let li = document.createElement('li');
+            li.textContent = s;
+            sList.appendChild(li);
+        });
+        const pList = document.getElementById('lista-projektow');
+        data.projekty.forEach(p => {
+            let li = document.createElement('li');
+            li.textContent = p;
+            pList.appendChild(li);
+        });
+    })
+    .catch(err => console.error("Błąd ładowania JSON:", err));
 
 
 const noteInput = document.getElementById('noteInput');
@@ -32,7 +38,7 @@ function displayNotes() {
     let notes = JSON.parse(localStorage.getItem('myNotes') || '[]');
     notes.forEach((n, i) => {
         const li = document.createElement('li');
-        li.style = "background: #f9f9f9; padding: 10px; margin-bottom: 5px; border-left: 4px solid #333; display: flex; justify-content: space-between;";
+        li.style = "background: #fdfdfd; padding: 10px; margin-bottom: 8px; border-left: 5px solid #333; display: flex; justify-content: space-between; align-items: center;";
         li.innerHTML = `<span>${n}</span> <button onclick="deleteNote(${i})" style="color:red; border:none; background:none; cursor:pointer;">[Usuń]</button>`;
         notesList.appendChild(li);
     });
@@ -52,7 +58,7 @@ function toggleTheme() {
 }
 
 function toggleSection() {
-    let s = document.getElementById('json-data-container');
+    let s = document.getElementById('umiejetnosci-container');
     s.style.display = (s.style.display === 'none') ? 'block' : 'none';
 }
 
