@@ -3,116 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bohdan Shvets - Laboratorium WWW</title>
+    <title>Bohdan Shvets - Portfolio Projektów</title>
     <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #34495e;
-            --accent: #3498db;
-            --text: #ecf0f1;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 550px;
-            width: 90%;
-        }
-
-        h1 {
-            color: var(--primary);
-            margin-bottom: 5px;
-            font-size: 28px;
-        }
-
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        .menu {
-            display: grid;
-            gap: 10px;
-        }
-
-        .btn {
-            display: block;
-            padding: 14px;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 15px;
-            text-align: left;
-            padding-left: 25px;
-            position: relative;
-        }
-
+        :root { --primary: #2c3e50; --secondary: #34495e; --accent: #3498db; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; max-width: 500px; width: 90%; }
+        h1 { color: var(--primary); margin-bottom: 5px; }
+        .subtitle { color: #666; margin-bottom: 30px; }
+        .menu { display: grid; gap: 10px; }
+        .btn { display: block; padding: 12px; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s; text-align: left; padding-left: 20px; }
+        .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
         
-        .btn:hover {
-            transform: scale(1.02);
-            filter: brightness(1.1);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn::after {
-            content: '→';
-            position: absolute;
-            right: 20px;
-            opacity: 0.7;
-        }
-
-        
-        .btn-1 { background-color: #95a5a6; } /* HTML */
-        .btn-2 { background-color: #27ae60; } /* CSS */
-        .btn-3 { background-color: #e74c3c; } /* Themes */
-        .btn-4 { background-color: #f39c12; } /* JS Basic */
-        .btn-5 { background-color: #2980b9; } /* Form */
-        .btn-6 { background-color: #8e44ad; } /* JSON */
-        .btn-7 { background-color: #2c3e50; } /* LocalStorage */
-
-        footer {
-            margin-top: 30px;
-            font-size: 12px;
-            color: #bdc3c7;
-        }
+        .btn-1-2 { background-color: #95a5a6; }
+        .btn-3-4 { background-color: #27ae60; }
+        .btn-5 { background-color: #f39c12; }
+        .btn-6 { background-color: #2980b9; }
+        .btn-7 { background-color: #8e44ad; }
+        .btn-8 { background-color: #c0392b; }
     </style>
 </head>
 <body>
-
     <div class="container">
         <h1>Bohdan Shvets</h1>
-        <p class="subtitle">Zbiór zadań laboratoryjnych - Strony WWW</p>
-        
+        <p class="subtitle">Laboratorium Projektowania Stron WWW</p>
         <div class="menu">
-            <a href="./zad1_cv/index.html" class="btn btn-1">Zadanie 1: Podstawy HTML</a>
-            <a href="./zad2_css/index.html" class="btn btn-2">Zadanie 2: Arkusze stylów CSS</a>
-            <a href="./zad3_motyw/index.html" class="btn btn-3">Zadanie 3: Dynamiczne motywy</a>
-            <a href="./zad4_js/index.html" class="btn btn-4">Zadanie 4: Interaktywność JavaScript</a>
-            <a href="./zad5_form/index.html" class="btn btn-5">Zadanie 5: Walidacja formularza</a>
-            <a href="./zad6_json/index.html" class="btn btn-6">Zadanie 6: Dane z pliku JSON (Fetch API)</a>
-            <a href="./zad7_storage/index.html" class="btn btn-7">Zadanie 7: Obsługa LocalStorage</a>
+            <a href="./zad1_cv/index.html" class="btn btn-1-2">Zadanie 1 & 2: HTML/CSS CV</a>
+            <a href="./zad3_motyw/index.html" class="btn btn-3-4">Zadanie 3 & 4: Motywy i JS</a>
+            <a href="./zad5_form/index.html" class="btn btn-5">Zadanie 5: Walidacja Formularza</a>
+            <a href="./zad6_json/index.html" class="btn btn-6">Zadanie 6: Dane z JSON</a>
+            <a href="./zad7_storage/index.html" class="btn btn-7">Zadanie 7: LocalStorage</a>
+            <a href="./zad8_backend/index.html" class="btn btn-8">Zadanie 8: Backend (POST API)</a>
         </div>
-
-        <footer>
-            Akademia Finansów i Biznesu Vistula | 2026
-        </footer>
+        <p style="margin-top: 20px; font-size: 12px; color: #bdc3c7;">Vistula University 2026</p>
     </div>
-
 </body>
 </html>
