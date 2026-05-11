@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Bohdan Shvets - Zadanie 8 Backend</title>
+    <title>Bohdan Shvets - Zadanie 8 Backend</title>
     <link id="theme-style" rel="stylesheet" href="red.css">
 </head>
 <body>
@@ -21,20 +21,23 @@
         <section id="kontakt-info">
             <h2>Kontakt</h2>
             <p><strong>Telegram:</strong> <a href="https://t.me/BohdanShvetss" target="_blank">@BohdanShvetss</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Bohdan-Shvets77364" target="_blank">github.com/Bohdan-Shvets77364</a></p>
         </section>
 
         <section id="umiejetnosci-container">
             <h2>Umiejętności (z JSON)</h2>
             <ul id="lista-umiejetnosci"></ul>
+            <h3>Projekty:</h3>
+            <ol id="lista-projektow"></ol>
         </section>
 
         <section id="storage-sekcja">
-            <h2>Lokalny Notatnik (LocalStorage)</h2>
+            <h2>Moje Notatki (LocalStorage)</h2>
             <div class="form-group" style="display: flex; gap: 10px;">
-                <input type="text" id="noteInput" placeholder="Nowa notatka...">
-                <button onclick="addNote()">Dodaj</button>
+                <input type="text" id="noteInput" placeholder="Dodaj nową notatkę...">
+                <button onclick="addNote()" style="width: auto; padding: 0 15px;">Dodaj</button>
             </div>
-            <ul id="notesList"></ul>
+            <ul id="notesList" style="margin-top: 15px; list-style: none; padding: 0;"></ul>
         </section>
 
         <section id="kontakt-form">
@@ -42,26 +45,28 @@
             <form id="contactForm" action="https://formspree.io/f/mqakvjge" method="POST" novalidate>
                 <div class="form-group">
                     <label>Imię:</label>
-                    <input type="text" name="firstName" id="firstName">
-                    <span class="error-msg" id="firstNameError"></span>
+                    <input type="text" name="firstName" id="firstName" placeholder="np. Bohdan">
+                    <span class="error-msg" id="firstNameError" style="color: red; font-size: 12px;"></span>
                 </div>
                 <div class="form-group">
                     <label>Nazwisko:</label>
-                    <input type="text" name="lastName" id="lastName">
-                    <span class="error-msg" id="lastNameError"></span>
+                    <input type="text" name="lastName" id="lastName" placeholder="np. Shvets">
+                    <span class="error-msg" id="lastNameError" style="color: red; font-size: 12px;"></span>
                 </div>
                 <div class="form-group">
                     <label>E-mail:</label>
-                    <input type="email" name="email" id="email">
-                    <span class="error-msg" id="emailError"></span>
+                    <input type="email" name="email" id="email" placeholder="example@mail.com">
+                    <span class="error-msg" id="emailError" style="color: red; font-size: 12px;"></span>
                 </div>
                 <div class="form-group">
-                    <label>Komentarz:</label>
-                    <textarea name="message" id="comment" rows="4"></textarea>
-                    <span class="error-msg" id="commentError"></span>
+                    <label>Komentarz (min. 5 znaków):</label>
+                    <textarea name="message" id="comment" rows="4" placeholder="Twoja wiadomość..."></textarea>
+                    <span class="error-msg" id="commentError" style="color: red; font-size: 12px;"></span>
                 </div>
-                <button type="submit" class="submit-btn">Wyślij na Serwer (POST)</button>
-                <p id="successMsg" class="success-text" style="display:none;">✅ Dane wysłane na serwer!</p>
+                <button type="submit" class="submit-btn">Wyślij wiadomość na serwer</button>
+                <p id="successMsg" class="success-text" style="display:none; color: green; font-weight: bold; text-align: center; margin-top: 10px;">
+                    ✅ Wiadomość została zapisana na serwerze!
+                </p>
             </form>
         </section>
     </main>
